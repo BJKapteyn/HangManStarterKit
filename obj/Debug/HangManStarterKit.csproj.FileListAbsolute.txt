@@ -12,3 +12,10 @@ C:\Users\Tommy\Desktop\HangManStarterKit\obj\Debug\HangManStarterKit.csprojAssem
 C:\Users\Tommy\Desktop\HangManStarterKit\obj\Debug\HangManStarterKit.csproj.CoreCompileInputs.cache
 C:\Users\Tommy\Desktop\HangManStarterKit\obj\Debug\HangManStarterKit.exe
 C:\Users\Tommy\Desktop\HangManStarterKit\obj\Debug\HangManStarterKit.pdb
+D:\C#\Labs\HangManStarterKit\bin\Debug\HangManStarterKit.exe.config
+D:\C#\Labs\HangManStarterKit\bin\Debug\HangManStarterKit.exe
+D:\C#\Labs\HangManStarterKit\bin\Debug\HangManStarterKit.pdb
+D:\C#\Labs\HangManStarterKit\obj\Debug\HangManStarterKit.csprojAssemblyReference.cache
+D:\C#\Labs\HangManStarterKit\obj\Debug\HangManStarterKit.csproj.CoreCompileInputs.cache
+D:\C#\Labs\HangManStarterKit\obj\Debug\HangManStarterKit.exe
+D:\C#\Labs\HangManStarterKit\obj\Debug\HangManStarterKit.pdb

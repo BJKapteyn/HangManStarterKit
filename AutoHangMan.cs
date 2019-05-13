@@ -6,26 +6,42 @@ using System.Threading.Tasks;
 
 namespace HangManStarterKit
 {
-    class HangmanGame
+    class AutoHangMan
     {
         //this is the word you're trying to guess
         public string word;
         public int tries = 0;
         public List<char> guessedLetters = new List<char>();
         public List<char> foundLetters = new List<char>();
-        List<string> wordBank = new List<string>{"fish","apple","tree", "dog", "rides", "scrambled" };
+        List<string> wordBank = new List<string> { "fish", "apple", "tree", "dog", "rides", "scrambled" };
         Player guesser;
-        public HangmanGame(Player guesser)
+        public AutoHangMan(Player p)
         {
-            this.guesser = guesser;
+            if (p.GetType() == typeof(RandomPlayer))
+            {
+                guesser = new RandomPlayer();
+            }
+            else if (p.GetType() == typeof(BruteForcePlayer))
+            {
+                guesser = new BruteForcePlayer();
+            }
+            else if(p.GetType() == typeof(SmartyPlayer))
+            {
+                guesser = new SmartyPlayer();
+            }
+            else
+            {
+                guesser = new HumanPlayer();
+            }
+
             Random r = new Random();
-            int index = r.Next(0,wordBank.Count);
+            int index = r.Next(0, wordBank.Count);
             word = wordBank[index];
-           
+
             Setup();
         }
 
-        public HangmanGame(Player guesser, string word)
+        public AutoHangMan(Player guesser, string word)
         {
             this.guesser = guesser;
             this.word = word;
@@ -59,9 +75,9 @@ namespace HangManStarterKit
 
         public bool HasWon()
         {
-            for(int i = 0; i < word.Length; i++)
+            for (int i = 0; i < word.Length; i++)
             {
-                if(foundLetters[i] != word[i])
+                if (foundLetters[i] != word[i])
                 {
                     return false;
                 }
@@ -99,14 +115,13 @@ namespace HangManStarterKit
                 Console.WriteLine("No Letter found...");
                 guessedLetters.Add(guess);
             }
-            Console.ReadLine();
             Console.Clear();
-             
+
         }
 
         public void PrintProgress()
         {
-            foreach(char c in foundLetters)
+            foreach (char c in foundLetters)
             {
                 Console.Write(c + " ");
             }
